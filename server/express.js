@@ -22,4 +22,10 @@ app.use(compress())
 app.use(helmet())
 app.use(cors())
 
+import Template from './../template'
+
+app.get('/', (req, res) => {
+  res.status(200).send(Template())
+})
+
 export default app
