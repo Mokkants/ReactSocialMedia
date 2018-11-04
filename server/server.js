@@ -2,7 +2,10 @@
 import mongoose from 'mongoose'
 import app from './express'
 
-//Connect to MongoDB
+//TODO move these to some config file
+let port = process.env.PORT || 3000;
+let mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/app';
+
 mongoose.connect(mongoURI, {useNewUrlParser: true}, function(err){
   if (err){
     console.error(`Failed to connect to MongoDB with URI ${mongoURI}`);
@@ -13,7 +16,7 @@ mongoose.connect(mongoURI, {useNewUrlParser: true}, function(err){
 
 let db = mongoose.connection;
 
-//Basic error handling
+//Basic error handling TODO probably do something nice instead of this
 app.use(function (err, req, res, next) {
   console.error(err.stack)
   res.status(500).send('Something broke!')
