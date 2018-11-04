@@ -1,21 +1,6 @@
 "use strict";
-import express from 'express'
 import mongoose from 'mongoose'
-import bodyParser from 'body-parser'
-import path from 'path'
-      
-let app = express();
-let port = process.env.PORT || 3000;
-let mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/app';
-
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
-
-app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
-
-//TODO: Remove once app is finished
-import devBundle from './devBundle'
-devBundle.compile(app)
+import app from './express'
 
 //Connect to MongoDB
 mongoose.connect(mongoURI, {useNewUrlParser: true}, function(err){
