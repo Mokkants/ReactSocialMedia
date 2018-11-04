@@ -6,7 +6,10 @@ import cookieParser from 'cookie-parser'
 import compress from 'compression'
 import cors from 'cors'
 import helmet from 'helmet'
-      
+
+import Template from './../template'
+import userRoutes from './routes/user.routes'      
+
 const app = express();
 const CURRENT_WORKING_DIR = process.cwd()
 app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
@@ -22,7 +25,7 @@ app.use(compress())
 app.use(helmet())
 app.use(cors())
 
-import Template from './../template'
+app.use('/',userRoutes);
 
 app.get('/', (req, res) => {
   res.status(200).send(Template())
