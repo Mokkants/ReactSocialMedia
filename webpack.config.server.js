@@ -1,6 +1,7 @@
 "use strict";
 const 
 path = require('path'),
+nodeExternals = require('webpack-node-externals'),
 CURRENT_WORKING_DIR = process.cwd();
 
 module.exports = {
