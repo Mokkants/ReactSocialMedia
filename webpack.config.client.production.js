@@ -6,7 +6,7 @@ CURRENT_WORKING_DIR = process.cwd();
 module.exports = {
     mode: "production",
     entry: [
-        path.join(CURRENT_WORKING_DIR, 'client/main.js')
+        path.join(CURRENT_WORKING_DIR, 'client/index.jsx')
     ],
     output: {
         path: path.join(CURRENT_WORKING_DIR , '/dist'),
