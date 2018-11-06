@@ -14,9 +14,9 @@ module.exports = {
         path.join(CURRENT_WORKING_DIR, 'client/index.jsx')
     ],
     output: {
-        path: path.join(CURRENT_WORKING_DIR , '/client/build'),
+        path: path.join(CURRENT_WORKING_DIR , '/dist'),
         filename: 'bundle.js',
-        publicPath: 'client/build/'
+        publicPath: 'dist'
     },
     module: {
         rules: [
