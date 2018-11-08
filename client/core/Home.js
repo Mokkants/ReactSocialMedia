@@ -22,6 +22,9 @@ const styles = theme => ({
 }) 
 
 class Home extends Component {
+    static propTypes = {
+      classes: PropTypes.object.isRequired
+    }
     constructor(props){
       super(props)
       this.state={
@@ -46,10 +49,6 @@ class Home extends Component {
         </div>
       )
     }
-}
-
-Home.propTypes = {
-    classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(Home)
