@@ -5,16 +5,18 @@ class Chat extends Component{
     constructor(){
         super();
         this.state={
-            messages:[],
-            partner:"Dummy"
+            messages:[{senderName:"Filip",text:"Hi!"}, {senderName:"Filip",text:"Hi!"}, {senderName:"Filip",text:"Hi!"}],
+            partner:{
+                name:"Filip"
+            }
         }
     }
     render(){
         return( 
-            <Messages props={{
-                messages:this.state.messages,
-                partner: this.state.partner
-            }}/>
+            <Messages 
+                messages={this.state.messages} 
+                partner={this.state.partner}
+            />
         )
     }
 }
