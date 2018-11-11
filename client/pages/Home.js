@@ -4,6 +4,7 @@ import {withStyles} from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
+import Chat from './Chat';
 
 const styles = theme => ({
     card: {
@@ -22,6 +23,9 @@ const styles = theme => ({
 }) 
 
 class Home extends Component {
+    static propTypes = {
+      classes: PropTypes.object.isRequired
+    }
     constructor(props){
       super(props)
       this.state={
@@ -33,8 +37,7 @@ class Home extends Component {
       return (
         <div>
           <Card className={classes.card}>
-            <Typography type="headline" component="h1" className=
-            {classes.title}>
+            <Typography type="headline" component="h1" className={classes.title}>
               Home
             </Typography>
             <CardContent>
@@ -43,13 +46,10 @@ class Home extends Component {
               </Typography>
             </CardContent>
           </Card>
+          <Chat></Chat>
         </div>
       )
     }
-}
-
-Home.propTypes = {
-    classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(Home)

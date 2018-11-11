@@ -3,7 +3,7 @@ import {indigo, pink} from '@material-ui/core/colors'
 import React from 'react'
 import {BrowserRouter} from 'react-router-dom'
 import {hot} from 'react-hot-loader'
-import MainRouter from './MainRouter.jsx'
+import MainRouter from './MainRouter'
 
 const theme = createMuiTheme({
   

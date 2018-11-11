@@ -11,7 +11,7 @@ module.exports = {
     entry: [
         'react-hot-loader/patch',
         'webpack-hot-middleware/client?reload=true',
-        path.join(CURRENT_WORKING_DIR, 'client/index.jsx')
+        path.join(CURRENT_WORKING_DIR, 'client/index')
     ],
     output: {
         path: path.join(CURRENT_WORKING_DIR , '/dist'),
@@ -26,7 +26,11 @@ module.exports = {
                 use: [
                     'babel-loader'
                 ]
-            }
+            },
+            {
+                test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/,
+                use: 'file-loader'
+             }
         ]
     }, plugins: [
           new webpack.HotModuleReplacementPlugin(),
