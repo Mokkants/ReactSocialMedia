@@ -37,8 +37,7 @@ class Home extends Component {
       return (
         <div>
           <Card className={classes.card}>
-            <Typography type="headline" component="h1" className=
-            {classes.title}>
+            <Typography type="headline" component="h1" className={classes.title}>
               Home
             </Typography>
             <CardContent>

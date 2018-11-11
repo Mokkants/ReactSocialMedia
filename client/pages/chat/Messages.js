@@ -1,19 +1,19 @@
 import React from 'react'
 import Message from './messages/Message';
+import List from '@material-ui/core/List';
 
-const Messages = (props) => {
-    if(!props.messages){
-        return <div>Start a conversation with {props.partner.name}</div>
-    }
-    else{
-        return (
-            <ul className="messages">
-                {props.messages.map(message=>{
+const Messages = ({messages,partner}) => {
+    return (
+        <List dense>
+            {messages ? (
+                messages.map(message=>{
                     return <Message message={message}/>
-                })}
-            </ul>
-        )
-    } 
+                })
+            ):(
+                <div>Start a conversation with {partner.name}!</div> 
+            )}
+        </List>
+    )
 }
 
-export default Messages
+export default Messages;

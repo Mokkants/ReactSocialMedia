@@ -1,20 +1,15 @@
 import React from 'react'
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Avatar from '@material-ui/core/Avatar';
+import pic from './../../../assets/images/avatar.png'
 
 const Message = (props) => {
     return(
-        <li key="props.message.id" className="message">
-        <div>
-            <div>
-                {props.message.senderName}
-            </div>
-            <div>
-                {/*{props.partner.profilePicture} TODO: Move this into ifelse so it only shows on partner message*/}
-            </div>
-        </div>
-        <div>
-            {props.message.text}
-        </div>
-        </li>
+        <ListItem key={props.message.id} button>
+        <Avatar alt="Profile Picture" src={pic} />
+        <ListItemText primary={props.message.text} />
+        </ListItem>
     )
 }
 
