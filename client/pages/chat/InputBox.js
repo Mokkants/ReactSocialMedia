@@ -1,5 +1,12 @@
 import React, {Component} from 'react'
 
+const inputBoxStyles={
+    width:'100%',
+    paddingTop:10,
+    paddingBottom:10,
+    fontSize:17
+}
+
 class InputBox extends Component {
     constructor() {
       super()
@@ -23,14 +30,14 @@ class InputBox extends Component {
     }
     render() {
       return (
-        <form
-          onSubmit={this.handleSubmit}
-          className="chat-input-box">
-          <input
-            onChange={this.handleChange}
-            value={this.state.message}
-            placeholder="Write a message..."
-            type="text" />
+        <form onSubmit={this.handleSubmit}>
+            <input
+                style={inputBoxStyles}
+                onChange={this.handleChange}
+                value={this.state.message}
+                placeholder="Write a message..."
+                type="text" 
+            />
         </form>
       )
     }
